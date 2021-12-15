@@ -1,6 +1,6 @@
 import { Button,Col, Row } from 'react-bootstrap';
 import help from '../img/help.jpg'
-
+import { Link } from 'react-router-dom';
 export function Project(props) {  
   return (
     <>
@@ -85,6 +85,7 @@ export function Project(props) {
         }
        
       </Row>
+      
     </>
   );
 }
