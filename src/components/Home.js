@@ -44,33 +44,9 @@ import CategorIesProject from './Home/CategorIesProject'
     <MainSection/>
     <LatestResults contract={contract}/>
     <HowItWorks/>
+    <CategorIesProject />       
     <LatestProject projects1={projects1}/>
-    <CategorIesProject />
-    { currentUser
-      ? <Container>
-          <Row>
-            <h2>
-              Hello: {currentUser.accountId} :{ currentUser ? <Balance amount={currentUser.balance} /> : null}
-              {" "}
-              <Button variant="secondary" onClick={signOut}>Log out</Button>
-            </h2>   
-          </Row>                       
-          <Row>
-            <Col lg="4">
-              <CreateProject contract={contract} />
-            </Col>
-            <Col lg="8">
-              <ProjectList contract={contract} wallet={wallet} />
-            </Col>
-          </Row>              
-        </Container>
-      : 
-      <Row>
-        Sign In To Use The App: 
-        {" "}
-        <button onClick={signIn}>Log in</button>
-      </Row>
-    } 
+  
   </Container>
   )
 }
