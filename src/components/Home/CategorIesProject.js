@@ -33,11 +33,8 @@ export default function CategorIesProject() {
         </Col>
   
         })
-      }
-     
-      </Row>
-       
-     
+      }     
+      </Row>        
   </Container>
   )
 }

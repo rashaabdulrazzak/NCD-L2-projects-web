@@ -9,48 +9,70 @@ const { utils } = nearAPI;
 
 
 const gas = new BN("30000000000000");
-const PER_PAGE_LIMIT = 3;
+const PER_PAGE_LIMIT = 2;
 
 const ProjectList = ({contract, wallet}) => {
   const [projects, setProjects] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [totalPageCount, setTotalPageCount] = useState([])
+  const [totalPageCount, setTotalPageCount] = useState(1)
   const [projectsCount, setProjectsCount] = useState(0)
 
   useEffect(() => {   
-    // every second after the component first mounts
-    // update the list of projects by invoking the listOfProjects
-    // method on the smart contract
-    const getNumberOfProjects = async()=>{
-      await  contract
-       .getNumberOfProjects()
-       .then((result) => {
-         console.log('result',result)
-         setProjectsCount(result)});
-     }
-     getNumberOfProjects();
-
-    let offset, sliceOffset; 
     
-    if(page < 1) {
-      setPage(1);
-      offset = projectsCount - PER_PAGE_LIMIT;
-      sliceOffset = 0;
-    } else {
-      offset = projectsCount - (page) * PER_PAGE_LIMIT;
-      
-      sliceOffset = (page - 1) * PER_PAGE_LIMIT;
-    }
-    const id = setInterval(() => {      
+     let offset 
+     const id = setInterval(() => {
       contract
+      .getNumberOfProjects()
+      .then((result) => {
+        console.log('result',result)
+        setProjectsCount(result)
+        let numOfPages = projectsCount / PER_PAGE_LIMIT 
+        setTotalPageCount(numOfPages)
+    })
+   }, 100);
+     if(page < 1) {
+       setPage(1);
+       offset = projectsCount - PER_PAGE_LIMIT;
+      
+     } else {
+       offset = projectsCount - (page) * PER_PAGE_LIMIT;       
+       
+     }
+        
+    const id1 = setInterval(() => {      
+      if(page <= 1){
+        contract
+        .getProjectsBySpecifcNumber({ startIndex:  0 , endIndex : PER_PAGE_LIMIT})
+        .then((projects) => {
+          if (projects.length < PER_PAGE_LIMIT) {
+            setLoading(true)
+            setProjects(projects);
+          } else {
+            setLoading(false)
+            setProjects(projects);
+          }})
+      }else{
+        contract
         .getProjectsBySpecifcNumber({ startIndex: offset < 0 ? 0 : offset, endIndex: offset + PER_PAGE_LIMIT})
         .then((projects) => {
-          setLoading(true)
-          console.log('projects',projects)
-          setProjects(projects)});
-    }, 1000); 
-    return () => clearInterval(id);
+          if (projects.length < 2) {
+            setLoading(true)
+            setProjects(projects);
+          } else {
+            setLoading(false)
+            setProjects(projects);
+          }})
+      }
+   
+          
+    }, 500); 
+    
+    return () => {
+      clearInterval(id)
+      clearInterval(id1)
+    };
+
   }, [page, contract]);
 
   // Donate with x funds 
@@ -91,17 +113,8 @@ const ProjectList = ({contract, wallet}) => {
         
       ))}
       </div>
-       </Row>
-     
-     <Row>
-       <Col>
-      {projects.map((project) => (
-        <div key={project.id}>
-          <Project contract={contract} project = {project} donate={donate}/>
-        </div>
-      ))}
-       </Col>
-      </Row> 
+       </Row>    
+    
       <Row className="justify-content-center px-5 disp-grid"> 
        <Col>
        <div  style={{
@@ -109,9 +122,10 @@ const ProjectList = ({contract, wallet}) => {
       }}>
       Current Page: {page}
       </div>
-      <button onClick={() => setPage((page) => page - 1)}>&lt;</button>
+      <button onClick={() => setPage((page) => {setPage(page-1)})}>&lt;</button>
       {" "}
-      <button onClick={() => setPage((page) => page + 1)}>&gt;</button>
+      <button onClick={() => setPage((page) => {
+        if(page >= totalPageCount){setPage(totalPageCount) } else{setPage(page+1)} })}>&gt;</button>
       </Col>
       </Row> 
     </Container>

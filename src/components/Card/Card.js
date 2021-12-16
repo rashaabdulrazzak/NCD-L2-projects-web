@@ -38,11 +38,7 @@ export default function Card(props) {
         
         
         </div>
-        <Row>
-        {name} 
-        {description}
-        {funds}
-        {props.project.id}
+        <Row>        
         </Row>
       </Col>
 
