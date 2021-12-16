@@ -9,6 +9,7 @@ import MainSection from './Home/MainSection'
 import HowItWorks from './Home/HowItWorks'
 import LatestProject from './Home/LatestProject'
 import CategorIesProject from './Home/CategorIesProject'
+import CallToAction from './Home/CallToAction'
  const Home = ({ contract, currentUser, nearConfig, wallet }) => {
   const [projects1, setProjects1] = useState([]);
   
@@ -40,14 +41,16 @@ import CategorIesProject from './Home/CategorIesProject'
     window.location.replace(window.location.origin + window.location.pathname);
   };
   return (
+    <>   
     <Container>     
-    <MainSection/>
-    <LatestResults contract={contract}/>
-    <HowItWorks/>
-    <CategorIesProject />       
-    <LatestProject projects1={projects1}/>
-  
-  </Container>
+      <MainSection/>
+      <LatestResults contract={contract}/>
+      <HowItWorks/>
+      <CategorIesProject />       
+      <LatestProject projects1={projects1}/>       
+    </Container>  
+    <CallToAction/>
+   </>
   )
 }
 export default Home 

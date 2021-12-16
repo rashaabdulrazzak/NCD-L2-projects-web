@@ -7,13 +7,13 @@ import {
   Routes  
 } from 'react-router-dom'; 
 import Home from './components/Home'
-import { Row,Nav ,Container, Navbar,Button} from 'react-bootstrap';
+import { Nav ,Container, Navbar,Button} from 'react-bootstrap';
 import logo from './img/help.jpg'
 import CreateProject from './components/CreateProject';
 import ProjectList from './components/ProjectList/ProjectList';
 import Balance from "./components/Balance";
 import Details from './Details';
-import { Project } from './components/Project';
+
 import * as nearAPI from "near-api-js";
 import BN from "bn.js";
 import Categories from './components/Categories/Categories';
@@ -79,13 +79,16 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
           <Nav>
             <Nav.Link href='/newproject'>Create a Project</Nav.Link>
             <Nav.Link href='/allprojects'>Fund a Project</Nav.Link>
-          
-            <Nav.Link onClick={currentUser.accountId ===''? {signIn}:{signOut}}>
-            { currentUser ?<p> Hello: {currentUser.accountId} :{ currentUser ? <Balance amount={currentUser.balance} /> : null} <Button variant="secondary" onClick={signOut}>Log out</Button></p> 
-                : <p>Log in</p>
-     
-             } 
-            </Nav.Link>
+            {
+              currentUser? 
+              <Nav.Link onClick={currentUser.accountId ===''? {signIn}:{signOut}}>
+              { currentUser ?<p> Hello: {currentUser.accountId} :{ currentUser ? <Balance amount={currentUser.balance} /> : null} <Button variant="secondary" onClick={signOut}>Log out</Button></p> 
+                  : <p>Log in</p>
+       
+               } 
+              </Nav.Link>:   <Button onClick={signIn}>Log in</Button>
+            }
+           
             
           </Nav>
         </Navbar.Collapse>
