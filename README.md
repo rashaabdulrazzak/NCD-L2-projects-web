@@ -1,3 +1,9 @@
+# Main Idea
+
+This is the front end of the contract I build for NCD1. It is built with react
+
+here is a [short explanation video](https://www.loom.com/share/582ecf8f32084285a0f02508c7b09211)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
