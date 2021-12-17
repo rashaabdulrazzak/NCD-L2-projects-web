@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Card from "../Card/Card";
 import "./ProjectList.css";
 
-const PER_PAGE_LIMIT = 3;
+const PER_PAGE_LIMIT = 9;
 
 const ProjectList = ({ contract, donate, currentUser, signIn }) => {
   const [projects, setProjects] = useState([]);
@@ -19,7 +19,7 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
       contract.getNumberOfProjects().then((result) => {
         console.log("result", result);
         setProjectsCount(result);
-        let numOfPages = projectsCount / PER_PAGE_LIMIT;
+        let numOfPages = Math.ceil(projectsCount / PER_PAGE_LIMIT);
         setTotalPageCount(numOfPages);
       });
     }, 100);

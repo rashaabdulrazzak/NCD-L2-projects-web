@@ -23,20 +23,20 @@ const CreateProject = ({
   const [name, setName] = useState("");
   const [funds, setFunds] = useState("");
   const [description, setDescription] = useState("");
-  const [categories, setCategories] = useState([
+  const [category, setCategory] = useState("Uncategorized");
+  const [loading, setLoading] = useState(false);
+  const [showA, setShowA] = useState(false);
+  const [showB, setShowB] = useState(false);
+  const toggleShowB = () => setShowB(!showB);
+  const toggleShowA = () => setShowA(!showA);
+  const categories = [
     "Personal",
     "Charity",
     "Environment",
     "Learning",
     "Health",
     "Uncategorized",
-  ]);
-  const [selectedCat, setSelectedCat] = useState("Uncategorized");
-  const [loading, setLoading] = useState(false);
-  const [showA, setShowA] = useState(false);
-  const [showB, setShowB] = useState(false);
-  const toggleShowB = () => setShowB(!showB);
-  const toggleShowA = () => setShowA(!showA);
+  ];
   const config = {
     networkId: "testnet",
     keyStore,
@@ -64,18 +64,18 @@ const CreateProject = ({
     if (result != "Not Found") {
       // invoke the smart contract's create method
       console.log("result", result);
-      alert(funds);
       const project = await contract.create({
         address,
         name,
         funds,
         description,
+        category,
       });
       setAddress("");
       setName("");
       setFunds("");
       setDescription("");
-      setSelectedCat("Uncategorized");
+      setCategory("Uncategorized");
       setLoading(false);
       console.log("project", project);
       if (project) {
@@ -164,9 +164,9 @@ const CreateProject = ({
                   label="Select a Category of your project"
                 >
                   <Form.Select
-                    defaultValue={selectedCat}
+                    defaultValue={category}
                     onChange={({ target }) => {
-                      setSelectedCat(target.value);
+                      setCategory(target.value);
                     }}
                     label="Select a Category of your project"
                   >
