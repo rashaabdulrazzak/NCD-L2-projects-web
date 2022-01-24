@@ -21,7 +21,7 @@ export default function Card({ project, currentUser, donate, signIn }) {
       </Link>
       <div className="card-body">
         <h2>{name}</h2>
-        <p>{description}</p>
+        <p>{`${description.substring(0, 200)}`}</p>
         <p className="funds">
           Needed Funds: <span style={{ fontWeight: 400 }}>{funds} </span>
         </p>

@@ -23,7 +23,10 @@ export default function LatestProject({ projects1 }) {
                 <Card.Img variant="top" src={help} />
                 <Card.Body>
                   <Card.Title>{project.name}</Card.Title>
-                  <Card.Text>{project.description}</Card.Text>
+                  <Card.Text>
+                    {" "}
+                    {`${project.description.substring(0, 200)}...`}
+                  </Card.Text>
                   <Card.Text>
                     <h6>
                       {" "}
