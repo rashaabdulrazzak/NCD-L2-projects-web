@@ -69,7 +69,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
                     }
                   >
                     {currentUser ? (
-                      <p>
+                      <p style={{ marginTop: "-5px" }}>
                         {" "}
                         Hello: {currentUser.accountId} :
                         {currentUser ? (
