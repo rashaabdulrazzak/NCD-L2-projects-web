@@ -200,7 +200,7 @@ const CreateProject = ({
         <Container className="container" data-aos="zoom-in">
           <div className="text-center mx-auto p-5 mt-5">
             <h2 className="my-3">To Create a Project </h2>
-            <h6 className="my-3">Please Sign in First </h6>
+            <h6 className="my-3">You Need to Sign in First </h6>
             <Button onClick={signIn}>Sign In</Button>
           </div>
         </Container>
