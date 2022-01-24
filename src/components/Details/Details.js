@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import ModalItem from "../Shared/ModalItem";
 import help from "../../img/help.jpg";
 
 import {
@@ -127,26 +128,18 @@ export default function Details({ contract, currentUser, donate, signIn }) {
                 ) : (
                   <Row>
                     <Col md={6}>
-                      <Button
-                        as={Col}
-                        variant="outline-warning"
-                        className="p-2 mx-2"
-                        onClick={signIn}
-                      >
-                        {" "}
-                        Donate with 5 Near
-                      </Button>
+                      <ModalItem
+                        signIn={signIn}
+                        nearNum={5}
+                        btnVariant="outline-warning"
+                      />
                     </Col>
                     <Col md={6}>
-                      <Button
-                        as={Col}
-                        variant="outline-warning"
-                        className="p-2 mx-2"
-                        onClick={signIn}
-                      >
-                        {" "}
-                        Donate with 10 Near
-                      </Button>
+                      <ModalItem
+                        signIn={signIn}
+                        nearNum={10}
+                        btnVariant="secondary"
+                      />
                     </Col>
                   </Row>
                 )}
@@ -176,9 +169,11 @@ export default function Details({ contract, currentUser, donate, signIn }) {
                   Complete the needed Fund
                 </Button>
               ) : (
-                <Button className="cta-btn" onClick={signIn}>
-                  Complete the needed Fund
-                </Button>
+                <ModalItem
+                  signIn={signIn}
+                  nearNum={project.residual}
+                  btnVariant="secondary"
+                />
               )}
             </div>
           </Container>

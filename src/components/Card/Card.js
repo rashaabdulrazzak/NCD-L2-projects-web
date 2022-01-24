@@ -1,5 +1,13 @@
-import React from "react";
-import { Col, Button, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
+import React, { useState } from "react";
+import ModalItem from "../Shared/ModalItem";
+import {
+  Col,
+  Button,
+  Row,
+  OverlayTrigger,
+  Tooltip,
+  Modal,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Card.css";
 import help from "../../img/help.jpg";
@@ -94,26 +102,14 @@ export default function Card({ project, currentUser, donate, signIn }) {
         ) : (
           <Row>
             <Col md={6}>
-              <Button
-                as={Col}
-                variant="outline-warning"
-                className="p-2 mx-2"
-                onClick={signIn}
-              >
-                {" "}
-                Donate with 5 Near
-              </Button>
+              <ModalItem
+                signIn={signIn}
+                nearNum={5}
+                btnVariant="outline-warning"
+              />
             </Col>
             <Col md={6}>
-              <Button
-                as={Col}
-                variant="outline-warning"
-                className="p-2 mx-2"
-                onClick={signIn}
-              >
-                {" "}
-                Donate with 10 Near
-              </Button>
+              <ModalItem signIn={signIn} nearNum={10} btnVariant="secondary" />
             </Col>
           </Row>
         )}
