@@ -161,3 +161,9 @@
 .calltoaction p {
   color: #fff;
 }
+.social-box{
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
