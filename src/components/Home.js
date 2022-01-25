@@ -7,6 +7,7 @@ import HowItWorks from "./Home/HowItWorks";
 import CategorIesProject from "./Home/CategorIesProject";
 import LatestProject from "./Home/LatestProject";
 import CallToAction from "./Home/CallToAction";
+import Footer from "./Footer/Footer";
 
 const Home = ({ contract }) => {
   const [projects1, setProjects1] = useState([]);
@@ -37,6 +38,7 @@ const Home = ({ contract }) => {
         <LatestProject projects1={projects1} />
       </Container>
       <CallToAction />
+      <Footer />
     </>
   );
 };
