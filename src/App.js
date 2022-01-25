@@ -10,7 +10,7 @@ import ProjectList from "./components/ProjectList/ProjectList";
 import Balance from "./components/Balance";
 import Categories from "./components/Categories/Categories";
 import Details from "./components/Details/Details";
-
+import Footer from "./components/Footer/Footer";
 import logo from "./img/help.jpg";
 
 import * as nearAPI from "near-api-js";
@@ -155,6 +155,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
             }
           />
         </Routes>
+        <Footer />
       </Router>
     </>
   );
