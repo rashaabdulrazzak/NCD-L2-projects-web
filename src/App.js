@@ -12,7 +12,7 @@ import Categories from "./components/Categories/Categories";
 import Details from "./components/Details/Details";
 import Footer from "./components/Footer/Footer";
 import logo from "./img/help.jpg";
-
+import "./App.css";
 import * as nearAPI from "near-api-js";
 import BN from "bn.js";
 
