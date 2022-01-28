@@ -4,14 +4,14 @@ import { Container, Row, Col } from "react-bootstrap";
 import Card from "../Card/Card";
 import "./ProjectList.css";
 
-const PER_PAGE_LIMIT = 9;
+const PER_PAGE_LIMIT = 5;
 
 const ProjectList = ({ contract, donate, currentUser, signIn }) => {
   const [projects, setProjects] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [totalPageCount, setTotalPageCount] = useState(1);
-  const [projectsCount, setProjectsCount] = useState(0);
+  const [projectsCount, setProjectsCount] = useState(1);
 
   useEffect(() => {
     let offset;
@@ -31,37 +31,39 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
     }
 
     const id1 = setInterval(() => {
-      if (page <= 1) {
-        contract
-          .getProjectsBySpecifcNumber({
-            startIndex: 0,
-            endIndex: PER_PAGE_LIMIT,
-          })
-          .then((projects) => {
-            if (projects.length < PER_PAGE_LIMIT) {
-              setLoading(true);
-              setProjects(projects);
-            } else {
-              setLoading(false);
-              setProjects(projects);
-            }
-          });
-      } else {
-        contract
-          .getProjectsBySpecifcNumber({
-            startIndex: offset < 0 ? 0 : offset,
-            endIndex: offset + PER_PAGE_LIMIT,
-          })
-          .then((projects) => {
-            if (projects.length < 2) {
-              setLoading(true);
-              setProjects(projects);
-            } else {
-              setLoading(false);
-              setProjects(projects);
-            }
-          });
-      }
+      // if (page <= 1) {
+      //   contract
+      //     .getProjectsBySpecifcNumber({
+      //       startIndex: 0,
+      //       endIndex: PER_PAGE_LIMIT,
+      //     })
+      //     .then((projects) => {
+      //       if (projects.length < PER_PAGE_LIMIT) {
+      //         setLoading(true);
+      //         setProjects(projects);
+      //       } else {
+      //         setLoading(false);
+      //         setProjects(projects);
+      //       }
+      //     });
+      // } else {
+      const startIndex = page * PER_PAGE_LIMIT - PER_PAGE_LIMIT;
+      const endIndex = startIndex + PER_PAGE_LIMIT;
+      contract
+        .getProjectsBySpecifcNumber({
+          startIndex,
+          endIndex,
+        })
+        .then((projects) => {
+          if (projects.length < 2) {
+            setLoading(true);
+            setProjects(projects);
+          } else {
+            setLoading(false);
+            setProjects(projects);
+          }
+        });
+      //}
     }, 500);
 
     return () => {
