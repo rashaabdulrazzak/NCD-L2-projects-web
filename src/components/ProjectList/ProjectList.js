@@ -14,7 +14,6 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
   const [projectsCount, setProjectsCount] = useState(1);
 
   useEffect(() => {
-    let offset;
     const id = setInterval(() => {
       contract.getNumberOfProjects().then((result) => {
         console.log("result", result);
@@ -23,30 +22,8 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
         setTotalPageCount(numOfPages);
       });
     }, 100);
-    if (page < 1) {
-      setPage(1);
-      offset = projectsCount - PER_PAGE_LIMIT;
-    } else {
-      offset = projectsCount - page * PER_PAGE_LIMIT;
-    }
 
     const id1 = setInterval(() => {
-      // if (page <= 1) {
-      //   contract
-      //     .getProjectsBySpecifcNumber({
-      //       startIndex: 0,
-      //       endIndex: PER_PAGE_LIMIT,
-      //     })
-      //     .then((projects) => {
-      //       if (projects.length < PER_PAGE_LIMIT) {
-      //         setLoading(true);
-      //         setProjects(projects);
-      //       } else {
-      //         setLoading(false);
-      //         setProjects(projects);
-      //       }
-      //     });
-      // } else {
       const startIndex = page * PER_PAGE_LIMIT - PER_PAGE_LIMIT;
       const endIndex = startIndex + PER_PAGE_LIMIT;
       contract
@@ -63,7 +40,6 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
             setProjects(projects);
           }
         });
-      //}
     }, 500);
 
     return () => {
