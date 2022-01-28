@@ -35,8 +35,8 @@ export default function Card({ project, currentUser, donate, signIn }) {
         </p>
 
         {currentUser ? (
-          <Row>
-            <Col md={6}>
+          <Row className="inline-flex">
+            <Col xs={6} md={6}>
               {project.residual != 0 ? (
                 <Button
                   variant="outline-warning"
@@ -67,7 +67,7 @@ export default function Card({ project, currentUser, donate, signIn }) {
                 </OverlayTrigger>
               )}
             </Col>
-            <Col md={6}>
+            <Col xs={6} md={6}>
               {project.residual != 0 ? (
                 <Button
                   variant="secondary"
@@ -101,14 +101,14 @@ export default function Card({ project, currentUser, donate, signIn }) {
           </Row>
         ) : (
           <Row>
-            <Col md={6}>
+            <Col xs={6} md={6}>
               <ModalItem
                 signIn={signIn}
                 nearNum={5}
                 btnVariant="outline-warning"
               />
             </Col>
-            <Col md={6}>
+            <Col xs={6} md={6}>
               <ModalItem signIn={signIn} nearNum={10} btnVariant="secondary" />
             </Col>
           </Row>
