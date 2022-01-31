@@ -1,6 +1,6 @@
 import * as nearAPI from "near-api-js";
 import BN from "bn.js";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Button } from "react-bootstrap";
 import "./ProjectList.css";
 import Card from "../Card/Card";
 const { utils } = nearAPI;
@@ -23,16 +23,33 @@ const ProjectList1 = ({ contract, wallet, projects, currentUser, signIn }) => {
     <Container className="mt-5 mb-3">
       <Row>
         <div className="cards">
-          {projects.map((project) => (
-            <Card
-              key={project.id}
-              contract={contract}
-              project={project}
-              donate={donate}
-              currentUser={currentUser}
-              signIn={signIn}
-            />
-          ))}
+          {projects.length > 0 ? (
+            projects.map((project) => (
+              <Card
+                key={project.id}
+                contract={contract}
+                project={project}
+                donate={donate}
+                currentUser={currentUser}
+                signIn={signIn}
+              />
+            ))
+          ) : (
+            <section className="cta-detail">
+              <Container className="container" data-aos="zoom-in">
+                <div className="text-center">
+                  <h3>No Project on this Category to display</h3>
+                  <p> Why you do not you see another projects? </p>
+                  <Button
+                    className="cta-detail-btn"
+                    onClick={() => window.location.replace("/allprojects")}
+                  >
+                    List all pojects
+                  </Button>
+                </div>
+              </Container>
+            </section>
+          )}
         </div>
       </Row>
     </Container>

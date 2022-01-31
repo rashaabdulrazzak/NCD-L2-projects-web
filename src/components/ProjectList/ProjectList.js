@@ -47,10 +47,12 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
       clearInterval(id1);
     };
   }, [page, contract, projectsCount]);
+
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);
     setPage(pageNumber);
   }
+
   const getPaginationGroup = () => {
     let start = Math.floor((page - 1) / PER_PAGE_LIMIT) * PER_PAGE_LIMIT;
     return new Array(totalPageCount).fill().map((_, idx) => start + idx + 1);
@@ -72,16 +74,20 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
 
       <Row>
         <div className="cards">
-          {projects.map((project) => (
-            <Card
-              key={project.id}
-              contract={contract}
-              project={project}
-              donate={donate}
-              currentUser={currentUser}
-              signIn={signIn}
-            />
-          ))}
+          {projects.length > 0 ? (
+            projects.map((project) => (
+              <Card
+                key={project.id}
+                contract={contract}
+                project={project}
+                donate={donate}
+                currentUser={currentUser}
+                signIn={signIn}
+              />
+            ))
+          ) : (
+            <h1>No Projects to display</h1>
+          )}
         </div>
       </Row>
 

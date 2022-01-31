@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import ModalItem from "../Shared/ModalItem";
-import {
-  Col,
-  Button,
-  Row,
-  OverlayTrigger,
-  Tooltip,
-  Modal,
-} from "react-bootstrap";
+import { Col, Button, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Card.css";
 import help from "../../img/help.jpg";
