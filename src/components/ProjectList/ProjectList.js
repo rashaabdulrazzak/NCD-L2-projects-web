@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 import Card from "../Card/Card";
 import "./ProjectList.css";
@@ -86,7 +86,20 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
               />
             ))
           ) : (
-            <h1>No Projects to display</h1>
+            <section className="cta-detail">
+              <Container className="container" data-aos="zoom-in">
+                <div className="text-center">
+                  <h3>No Project on this Category to display</h3>
+                  <p> Why you do not you see another projects? </p>
+                  <Button
+                    className="cta-detail-btn"
+                    onClick={() => window.location.replace("/allprojects")}
+                  >
+                    List all pojects
+                  </Button>
+                </div>
+              </Container>
+            </section>
           )}
         </div>
       </Row>
