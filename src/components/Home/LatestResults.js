@@ -26,7 +26,7 @@ function LatestResults({ contract }) {
     getNumberOfFundedProjects();
   }, [contract]);
   return (
-    <Row className="d-flex justify-content-center px-5 ">
+    <Row className="d-flex justify-content-center px-5 font-link">
       <Col className="contact-widget justify-content-center contact-content ">
         <img src={solidarity} alt="monitor" width="50px" />
         <div>

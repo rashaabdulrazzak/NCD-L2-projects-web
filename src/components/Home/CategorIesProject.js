@@ -27,7 +27,7 @@ export default function CategorIesProject() {
     helping,
   ];
   return (
-    <Container>
+    <Container className="font-link">
       <Row className="my-5">
         <Col xs={12} className="d-flex justify-content-center secondary-color">
           <h2>Projects Categories</h2>

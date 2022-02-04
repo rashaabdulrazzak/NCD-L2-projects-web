@@ -12,7 +12,7 @@ export default function ModalItem({ signIn, nearNum, btnVariant }) {
         Donate with {nearNum} Near
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="font-link">
         <Modal.Header closeButton>
           <Modal.Title>Sign up reqired</Modal.Title>
         </Modal.Header>

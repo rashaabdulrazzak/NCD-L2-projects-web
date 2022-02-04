@@ -16,7 +16,7 @@ export default function CallToAction() {
   const shareUrl = "https://projects-web.herokuapp.com/";
   const title = "Let us support";
   return (
-    <Container fluid className="calltoaction" data-aos="zoom-in">
+    <Container fluid className="calltoaction font-link" data-aos="zoom-in">
       <div className="text-center">
         <h3>Do You Like Our Idea </h3>
         <p> Let us share it with friends </p>

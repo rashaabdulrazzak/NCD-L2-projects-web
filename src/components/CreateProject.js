@@ -91,7 +91,7 @@ const CreateProject = ({
   return (
     <>
       {currentUser ? (
-        <Container>
+        <Container className="font-link">
           <Row className="my-5">
             <Col
               md={{ span: 8, offset: 2 }}
@@ -197,12 +197,12 @@ const CreateProject = ({
           </Row>
         </Container>
       ) : (
-        <Container className="container" data-aos="zoom-in">
-          <div className="text-center mx-auto p-5 mt-5">
+        <Container className="container font-link" data-aos="zoom-in">
+          <section className="text-center mx-auto mt-5 pt-7">
             <h2 className="my-3">To Create a Project </h2>
             <h6 className="my-3">You Need to Sign in First </h6>
             <Button onClick={signIn}>Sign In</Button>
-          </div>
+          </section>
         </Container>
       )}
     </>

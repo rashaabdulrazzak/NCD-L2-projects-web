@@ -60,7 +60,7 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
 
   return (
     <Container
-      className="py-2 mt-5 mb-3"
+      className="py-2 mt-5 mb-3 font-link"
       style={{
         color: "#292b2c",
         backgroundColor: "#fff",

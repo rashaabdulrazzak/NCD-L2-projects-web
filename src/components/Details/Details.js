@@ -31,7 +31,7 @@ export default function Details({ contract, currentUser, donate, signIn }) {
   }, [contract, projectId]);
   return (
     <>
-      <section id="portfolio-details" className="portfolio-details">
+      <section id="portfolio-details" className="portfolio-details font-link">
         <Container>
           <Row className="row gy-4">
             <Col xs={6}>
@@ -154,7 +154,7 @@ export default function Details({ contract, currentUser, donate, signIn }) {
         </Container>
       </section>
       {project.residual != 0 ? (
-        <section id="cta" className="cta">
+        <section id="cta" className="cta font-link">
           <Container className="container" data-aos="zoom-in">
             <div className="text-center">
               <h3>Do You Like This Project?</h3>
@@ -179,7 +179,7 @@ export default function Details({ contract, currentUser, donate, signIn }) {
           </Container>
         </section>
       ) : (
-        <section id="cta" className="cta">
+        <section id="cta" className="cta font-link">
           <Container className="container" data-aos="zoom-in">
             <div className="text-center">
               <h3>The project is successfully funded </h3>

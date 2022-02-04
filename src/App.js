@@ -47,7 +47,13 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   return (
     <>
       <Router>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          bg="dark"
+          variant="dark"
+          className="font-link"
+        >
           <Container>
             <Navbar.Brand href="/">
               <img

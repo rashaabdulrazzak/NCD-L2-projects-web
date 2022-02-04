@@ -1,6 +1,17 @@
-
+.body{
+  font-family: 'Roboto';
+}
 .navbar-dark .navbar-nav .nav-link {
   color: rgb(255 255 255) ;
   padding-top: 20px;
   
+}
+.font-link {
+  font-family: 'Roboto';
+}
+.pt-7 {
+  padding: 8.4rem;
+}
+.bg-dark{
+  background-color: #124265 !important;
 }

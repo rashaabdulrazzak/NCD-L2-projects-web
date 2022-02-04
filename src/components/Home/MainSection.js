@@ -4,7 +4,7 @@ import TitledText from "../../TitledText";
 import hands from "../../img/hands.jpg";
 function MainSection() {
   return (
-    <Row className="home-cover d-flex align-items-center justify-content-center bg-gray">
+    <Row className="home-cover d-flex align-items-center justify-content-center bg-gray font-link">
       <Col
         xs={9}
         md={5}
