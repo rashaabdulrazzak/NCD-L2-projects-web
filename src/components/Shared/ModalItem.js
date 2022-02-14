@@ -8,7 +8,7 @@ export default function ModalItem({ signIn, nearNum, btnVariant }) {
 
   return (
     <>
-      <Button variant={btnVariant} onClick={handleShow}>
+      <Button variant={btnVariant} onClick={handleShow} className="p-2 mx-2">
         Donate with {nearNum} Near
       </Button>
 

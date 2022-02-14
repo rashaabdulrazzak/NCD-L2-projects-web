@@ -44,3 +44,7 @@
   border-color: #ff5a4d;
   background-color:#f5382a;
 }
+.btn-outline-warning.disabled, .btn-outline-warning:disabled {
+  color: #ff5a4d;
+  background-color: transparent;
+}

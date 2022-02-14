@@ -29,10 +29,11 @@ export default function Card({ project, currentUser, donate, signIn }) {
 
         {currentUser ? (
           <Row className="inline-flex">
-            <Col xs={6} md={6}>
+            <Col xs={6} md={6} lg={6}>
               {project.residual != 0 ? (
                 <Button
                   variant="outline-warning"
+                  className="p-2 mx-2"
                   onClick={() => donate(project.address, project.id, "5")}
                 >
                   {" "}
@@ -60,10 +61,11 @@ export default function Card({ project, currentUser, donate, signIn }) {
                 </OverlayTrigger>
               )}
             </Col>
-            <Col xs={6} md={6}>
+            <Col xs={6} md={6} lg={6}>
               {project.residual != 0 ? (
                 <Button
                   variant="secondary"
+                  className="p-2 mx-2"
                   onClick={() => donate(project.address, project.id, "10")}
                 >
                   {" "}
