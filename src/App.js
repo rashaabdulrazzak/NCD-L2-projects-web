@@ -55,7 +55,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
           className="font-link"
         >
           <Container>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/" style={{ marginTop: "-10px" }}>
               <img src={logo} alt="logo" style={{ height: "70px" }} />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -77,7 +77,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
                         {currentUser ? (
                           <Balance amount={currentUser.balance} />
                         ) : null}{" "}
-                        <Button variant="secondary" onClick={signOut}>
+                        <Button variant="primary" onClick={signOut}>
                           Log out
                         </Button>
                       </p>
