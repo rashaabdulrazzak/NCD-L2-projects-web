@@ -11,7 +11,7 @@ import Balance from "./components/Balance";
 import Categories from "./components/Categories/Categories";
 import Details from "./components/Details/Details";
 import Footer from "./components/Footer/Footer";
-import logo from "./img/help.jpg";
+import logo from "./img/supportlogo-removebg.png";
 import "./App.css";
 import * as nearAPI from "near-api-js";
 import BN from "bn.js";
@@ -56,11 +56,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         >
           <Container>
             <Navbar.Brand href="/">
-              <img
-                src={logo}
-                alt="logo"
-                style={{ width: "50px", height: "50px" }}
-              />
+              <img src={logo} alt="logo" style={{ height: "70px" }} />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
