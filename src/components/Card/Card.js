@@ -3,7 +3,8 @@ import ModalItem from "../Shared/ModalItem";
 import { Col, Button, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import help from "../../img/help.jpg";
+//import help from "../../img/help.jpg";
+import help from "../../img/project/project3.jpg";
 
 export default function Card({ project, currentUser, donate, signIn }) {
   const { id, name, description, funds, received, residual } = project;
