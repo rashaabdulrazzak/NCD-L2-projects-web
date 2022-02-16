@@ -4,8 +4,9 @@
   height: 75vh;
   position: relative;  
   background-size: cover;
-  position: relative;
+  position: relative; 
 }
+
 .home-cover h1{
   margin: 0;
   font-size: 46px;
