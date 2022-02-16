@@ -6,7 +6,7 @@ function Footer() {
   return (
     <Container fluid>
       <Row
-        className="px-3 flex justify-content-center "
+        className="px-3 flex justify-content-center font-link"
         style={{ backgroundColor: "#212529 " }}
       >
         <Col

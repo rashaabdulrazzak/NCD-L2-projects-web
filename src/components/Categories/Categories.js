@@ -27,7 +27,7 @@ export default function Categories({
     getProjectsbyCategories();
   }, [contract, catName]);
   return (
-    <div>
+    <div className="font-link">
       <Row className="my-5">
         <Col xs={12} className="d-flex justify-content-center secondary-color">
           <h2>{catName}</h2>

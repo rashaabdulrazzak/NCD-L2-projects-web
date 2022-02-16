@@ -20,7 +20,7 @@ const ProjectList1 = ({ contract, wallet, projects, currentUser, signIn }) => {
     console.log(transferMoney);
   };
   return (
-    <Container className="mt-5 mb-3">
+    <Container className="mt-5 mb-3 font-link">
       <Row>
         <div className="cards">
           {projects.length > 0 ? (

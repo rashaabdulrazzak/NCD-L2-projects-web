@@ -2,11 +2,12 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import help from "../../img/help.jpg";
+// simport help from "../../img/help.jpg";
+import help from "../../img/project/project1.jpg";
 
 export default function LatestProject({ projects1 }) {
   return (
-    <Container className="padding-80">
+    <Container className="padding-80 font-link">
       <Row className="my-5">
         <Col xs={12} className="d-flex justify-content-center secondary-color">
           <h2>Latest Projects</h2>

@@ -60,7 +60,7 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
 
   return (
     <Container
-      className="py-2 mt-5 mb-3"
+      className="py-2 mt-5 mb-3 font-link"
       style={{
         color: "#292b2c",
         backgroundColor: "#fff",
@@ -115,7 +115,7 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
               }
               className={`prev ${page === 1 ? "disabled" : ""}`}
             >
-              &laquo; prev
+              &laquo; Prev
             </button>{" "}
             {getPaginationGroup().map((item, index) => (
               <button
@@ -138,7 +138,7 @@ const ProjectList = ({ contract, donate, currentUser, signIn }) => {
               }
               className={`next ${page === totalPageCount ? "disabled" : ""}`}
             >
-              next &raquo;
+              Next &raquo;
             </button>
           </div>
         </Col>

@@ -4,15 +4,15 @@
   height: 75vh;
   position: relative;  
   background-size: cover;
-  position: relative;
+  position: relative; 
 }
+
 .home-cover h1{
   margin: 0;
   font-size: 46px;
   font-weight: 700;
   line-height: 72px;
-  color: #124265;
-  font-family: "Poppins", sans-serif;
+  color: #124265; /*124265; 70c7ce */
 }
 #home-cover p {
   color: #5e5e5e;
@@ -71,8 +71,8 @@
 }
 
 .step-number .number {
-  color: #bfc5ca;
-  background-color: #eaeff4;
+  color: #fff;
+  background-color: #124265;
   font-size: 1.5rem;
 }
 
@@ -145,10 +145,12 @@
   color:#124265;
   text-decoration: none;
 }
-
+.links:hover{
+  color: #ff5a4d;
+}
 /* call to action */ 
 .calltoaction {
-  background: #70c7ce;;
+  background: #124265 ; /*70c7ce;;*/
   background-size: cover;
   padding: 50px 0;
   margin-bottom: 50px;

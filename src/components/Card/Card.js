@@ -3,7 +3,8 @@ import ModalItem from "../Shared/ModalItem";
 import { Col, Button, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import help from "../../img/help.jpg";
+//import help from "../../img/help.jpg";
+import help from "../../img/project/project3.jpg";
 
 export default function Card({ project, currentUser, donate, signIn }) {
   const { id, name, description, funds, received, residual } = project;
@@ -29,10 +30,11 @@ export default function Card({ project, currentUser, donate, signIn }) {
 
         {currentUser ? (
           <Row className="inline-flex">
-            <Col xs={6} md={6}>
+            <Col xs={6} md={6} lg={6}>
               {project.residual != 0 ? (
                 <Button
                   variant="outline-warning"
+                  className="p-2 mx-2"
                   onClick={() => donate(project.address, project.id, "5")}
                 >
                   {" "}
@@ -60,10 +62,11 @@ export default function Card({ project, currentUser, donate, signIn }) {
                 </OverlayTrigger>
               )}
             </Col>
-            <Col xs={6} md={6}>
+            <Col xs={6} md={6} lg={6}>
               {project.residual != 0 ? (
                 <Button
                   variant="secondary"
+                  className="p-2 mx-2"
                   onClick={() => donate(project.address, project.id, "10")}
                 >
                   {" "}

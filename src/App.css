@@ -1,6 +1,50 @@
-
+.body{
+  font-family: 'Roboto';
+}
 .navbar-dark .navbar-nav .nav-link {
   color: rgb(255 255 255) ;
   padding-top: 20px;
   
+}
+.font-link {
+  font-family: 'Roboto';
+}
+.pt-7 {
+  padding: 8.4rem;
+}
+.bg-dark{
+  background-color: #124265 !important;
+}
+.btn-primary{
+    color: #fff;
+    background-color: #ff5a4d;
+    border-color: #ff685d;
+}
+.btn-primary:hover{
+  color: #fff;
+  background-color: #f5382a;
+  border-color: #ff685d;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #124265;
+  border-color: #124265;
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #032842;
+  border-color: #124265;
+}
+.btn-outline-warning {
+  color: #ff5a4d;
+  border-color: #ff5a4d;
+}
+.btn-outline-warning:hover{
+  color: #fff;
+  border-color: #ff5a4d;
+  background-color:#f5382a;
+}
+.btn-outline-warning.disabled, .btn-outline-warning:disabled {
+  color: #ff5a4d;
+  background-color: transparent;
 }
