@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ModalItem from "../Shared/ModalItem";
-import help from "../../img/help.jpg";
+// import help from "../../img/help.jpg";
+import help from "../../img/project/project1.jpg";
 
 import {
   Col,
