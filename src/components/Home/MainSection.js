@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import TitledText from "../../TitledText";
 // import hands from "../../img/hands.jpg";
-import hands from "../../img/main/20943414.jpg";
+import hands from "../../img/main/11111.jpg";
 
 function MainSection() {
   return (
